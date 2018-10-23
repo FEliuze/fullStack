@@ -10,9 +10,9 @@
 * 前端测试 `npm run test`
 
 ### 自定义配置
-* 前端配置文件: `config`
+* 前端配置文件: `client/config`
   端口监听、资源引入、请求转发等(开发中)
-* 后端配置文件: `config.js`
+* 后端配置文件: `server/config.js`
   端口监听、数据库配置等
 
 ### 前端开发
