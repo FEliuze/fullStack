@@ -1,7 +1,7 @@
 {
-  "name": "framenew",
+  "name": "fullStack",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "A project structure front-end width vue-cli and back-end with express",
   "author": "liuze <18710249831@163.com>",
   "private": true,
   "scripts": {
