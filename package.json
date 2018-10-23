@@ -16,11 +16,14 @@
     "serv-dev": "nodemon ./server/bin/www.js --dev"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "connect-multiparty": "^2.2.0",
     "connect-session-sequelize": "^5.2.2",
     "cookie-parser": "^1.4.3",
+    "echarts": "^4.2.0-rc.2",
     "ejs": "^2.6.1",
+    "element-ui": "^2.4.8",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
     "express-session": "^1.15.6",
@@ -33,8 +36,10 @@
     "sequelize": "^3.24.1",
     "serve-favicon": "^2.5.0",
     "vue": "^2.5.2",
+    "vue-progressbar": "^0.7.5",
     "vue-router": "^3.0.1",
     "vue-wordcloud": "^1.0.2",
+    "vuex": "^3.0.1",
     "webpack-jarvis": "^0.3.2"
   },
   "devDependencies": {
