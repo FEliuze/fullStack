@@ -1,0 +1,85 @@
+@import './variables.less';
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "Microsoft YaHei";
+  color: @aside-font-color;
+}
+
+div,
+a,
+li,
+ul,
+img,
+i,
+button,
+h1,
+h2,
+h3,
+h4,
+h5 {
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+li {
+  list-style: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none !important;
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.float-left {
+  float: left;
+}
+
+.float-right {
+  float: right;
+}
+
+.clear::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+.text-overflow {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+}
+
+.text-overflow-mult {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  height: 50px;
+}
+
+.transition {
+  transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1), color 2s, background 2s;
+  -moz-transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1), color 2s, background 2s;
+  -webkit-transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1), color 2s, background 2s;
+  -o-transition: all 0.45s cubic-bezier(0.23, 1, 0.32, 1), color 2s, background 2s;
+}
