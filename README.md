@@ -1,6 +1,10 @@
 ### 安装
 * `npm install`
 
+### 前言
+* 不需要后端接口服务可只启动前端服务
+* 需要后端接口，需配置数据库类型和地址
+
 ### 如何使用
 * 编译前端代码且启动服务 `npm run start`
 * 启动服务(默认pro) `npm run serv`
@@ -38,4 +42,3 @@
 * sequlize配置/model
 * 路由配置/routes/index.js
 * 入口文件/views/index.js
-* 需配置数据库类型和地址方可正常启动
