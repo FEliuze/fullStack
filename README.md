@@ -38,3 +38,4 @@
 * sequlize配置/model
 * 路由配置/routes/index.js
 * 入口文件/views/index.js
+* 需配置数据库类型和地址方可正常启动
