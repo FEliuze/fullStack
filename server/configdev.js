@@ -3,21 +3,21 @@ let opts = {
   apiPort: 8002,
   db: {
     mysql: {
-      host: '',
-      user: '',
-      port: '',
-      password: '',
-      database: '',
+      host: '192.168.1.118',
+      user: 'cloud_manager',
+      port: 3358,
+      password: 'Yplsec.com',
+      database: 'ypl_framework',
       connectionLimit: 10, // 连接池上限
       multipleStatements: true // 多语句组合
     },
     sequelize: {
-      dialect: '', // 数据库类型
-      host: '',
-      port: '',
-      username: '',
-      password: '',
-      database: '',
+      dialect: 'mysql', // 数据库类型
+      host: '192.168.1.118',
+      port: '3358',
+      username: 'cloud_manager',
+      password: 'Yplsec.com',
+      database: 'ypl_framework',
       timezone: '+08:00'
     }
   }

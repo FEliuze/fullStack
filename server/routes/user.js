@@ -14,6 +14,7 @@ module.exports = {
       let username = req.body.username
       let password = req.body.password
       password = decipher.update(password).digest('base64')
+      console.log(username, password)
       User.findAll({
         include: [UserPermission],
         where: {

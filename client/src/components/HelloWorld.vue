@@ -66,9 +66,12 @@ export default {
       }]
     }
   },
+  methods: {
+  },
   mounted () {
-    // $('#aaa').text('6666666666')
     console.log(this.$refs)
+    console.log('>>>', this.$Progress)
+    this.$Progress.start()
     this.$refs.aaa.textContent = '6666666666'
   }
 }

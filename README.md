@@ -42,3 +42,7 @@
 * sequlize配置/model
 * 路由配置/routes/index.js
 * 入口文件/views/index.js
+
+### 版本介绍
+* 前端vue-cli2
+* 后端登录验证机制jwt

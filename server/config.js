@@ -1,4 +1,8 @@
 const path = require('path')
+let configDev = require('./configdev')
+let configPro = require('./configpro')
+
+const dbConf = process.argv[2] === '--dev' ? configDev : configPro
 
 let opts = {
   pro: process.env.NODE_ENV === 'production',
@@ -28,10 +32,10 @@ let opts = {
   limit: '50mb',
   // session
   session: {
-    status: 'off', // 开启 on, 关闭 off
+    status: 'on', // 开启 on, 关闭 off
     secret: '~Yoursecret~',
-    checkExpirationInterval: 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
-    expiration: 3 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
+    checkExpirationInterval: 2 * 60 * 1000, // The interval at which to cleanup expired sessions in milliseconds.
+    expiration: 10 * 60 * 1000 // The maximum age (in milliseconds) of a valid session.
   },
   time: {
     formatStr: 'YYYY-MM-DD HH:mm:ss'
@@ -45,7 +49,7 @@ opts.port = process.env.PORT || opts.port
 opts.host = process.env.HOST || opts.host
 
 // check config
-if (opts.session.status === 'on' && opts.db.sequelize === null) {
+if (opts.session.status === 'on' && dbConf.db.sequelize === null) {
   throw new Error('配置异常, 启用Session时必须配置db.sequelize')
 }
 
