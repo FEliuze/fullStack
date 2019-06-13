@@ -6,6 +6,7 @@ import store from './store'
 import router from './router'
 import Axios from 'axios'
 import ElementUI from 'element-ui'
+import {Message} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echarts from '../plugins/echarts'
 import VueProgressBar from 'vue-progressbar'
@@ -24,10 +25,51 @@ const barOptions = {
   location: 'top',
   inverse: false
 }
+
+let Intercept = function (Vue, router) {
+  // 路由拦截
+  router.beforeEach((to, from, next) => {
+    // if (to.path !== '/' && !localStorage.getItem('domain')) {
+    //   next({
+    //     path: '/'
+    //   })
+    // } else {
+    //   next()
+    // }
+  })
+  // request拦截设置
+  Vue.prototype.$axios.interceptors.request.use(function (config) {
+    Vue.prototype.$Progress.start()
+    return config
+  }, error => {
+    Vue.prototype.$Progress.finish()
+    Message.error({
+      message: '请求超时'
+    })
+    return Promise.reject(error)
+  })
+  // response拦截设置
+  Vue.prototype.$axios.interceptors.response.use(data => { // 响应成功关闭loading
+    Vue.prototype.$Progress.finish()
+    if (data.data.status === 401 || data.data.status === 400) {
+      let t = sessionStorage.getItem('interval')
+      clearInterval(t)
+      sessionStorage.clear()
+      router.push('/')
+    } else {
+      return data
+    }
+  }, error => {
+    Vue.prototype.$Progress.finish()
+    return Promise.reject(error)
+  })
+}
+
 // Vue.use(Vs)
 Vue.use(Axios)
 Vue.use(echarts)
 Vue.use(ElementUI)
+Vue.use(Intercept, router)
 Vue.use(VueProgressBar, barOptions)
 
 Vue.directive('drag', (el, bindings) => {

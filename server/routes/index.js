@@ -13,6 +13,11 @@ const operationLog = require('./operationLog')
 
 // 创建router
 let router = express.Router()
+// 路由拦截器
+router.all('*', (request, response, next) => {
+  response.header('Access-Control-Allow-Origin', '*')
+  //
+})
 createRoute(router, user, '/user')
 createRoute(router, menus, '/menus')
 createRoute(router, userPermission, '/userPermission')
