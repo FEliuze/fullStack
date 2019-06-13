@@ -10,6 +10,8 @@ import {Message} from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import echarts from '../plugins/echarts'
 import VueProgressBar from 'vue-progressbar'
+import theme from '../commons/theme.js'
+
 // import Vs from 'd3-vs'
 
 const barOptions = {
@@ -64,7 +66,7 @@ let Intercept = function (Vue, router) {
     return Promise.reject(error)
   })
 }
-
+Vue.prototype.$theme = theme
 // Vue.use(Vs)
 Vue.use(Axios)
 Vue.use(echarts)

@@ -16,6 +16,7 @@ const state = {
   domainLogo,
   domainTitle: 'system manager',
   domainId: null,
+  theme: localStorage.getItem('theme') || 'light',
   status: {
     testData: {
       update: null
@@ -27,6 +28,9 @@ const mutations = {
   setDomainLogoAndDomainTitle (state) {
     state.domainTitle = localStorage.getItem('domainTitle')
     state.domainLogo = localStorage.getItem('domainLogo')
+  },
+  setTheme (state, theme) {
+    state.theme = theme
   },
   [types.TEST_DATA_UPDATE_SUCCESS] (state, data) {
     state.testData = data
